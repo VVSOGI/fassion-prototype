@@ -4,7 +4,7 @@ import { MoveBackHeader, MoveButton } from "@/app/components";
 export default function page() {
   return (
     <div>
-      <MoveBackHeader />
+      <MoveBackHeader path="/" />
       <div className="flex flex-col gap-[50px] mt-[305px] mb-[175px]">
         <MoveButton path="/task1/choice/top">상의</MoveButton>
         <MoveButton path="/task1/choice/bottom">하의</MoveButton>
