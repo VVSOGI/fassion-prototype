@@ -8,14 +8,14 @@ export default function Page() {
   const [choice, setChoice] = useState<number>();
 
   useEffect(() => {
-    fetch("http://localhost:3000/top.json").then(async (res) => {
+    fetch("http://localhost:3000/bottom.json").then(async (res) => {
       const clothes = await res.json();
       setData(clothes);
     });
 
     const choice = localStorage.getItem("task1") as string;
     if (choice) {
-      setChoice(JSON.parse(choice).top);
+      setChoice(JSON.parse(choice).bottom);
     }
   }, []);
 
@@ -24,7 +24,7 @@ export default function Page() {
       <MoveBackHeader path="/task1/choice" />
       <div className="mt-[79px] ml-[43px] mb-[76px]">
         <div className="w-[280px] h-[88px] flex justify-center items-center bg-[#2C2F37] rounded-[30px] text-[40px] text-white">
-          상의
+          하의
         </div>
       </div>
       <div className="grid grid-cols-4 gap-2">
@@ -40,7 +40,7 @@ export default function Page() {
                 setChoice(item.id);
                 const data =
                   JSON.parse(localStorage.getItem("task1") as string) || {};
-                data.top = item.id;
+                data.bottom = item.id;
                 localStorage.setItem("task1", JSON.stringify(data));
               }}
             >
