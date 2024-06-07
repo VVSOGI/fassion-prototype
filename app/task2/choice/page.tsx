@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { MoveBackHeader } from "@/app/components";
 import Slide from "./Slide";
+import Link from "next/link";
 
 export default function Page() {
   const [top, setTop] = useState<{ id: number; url: string }[]>();
@@ -12,6 +13,8 @@ export default function Page() {
   const [choiceTop, setChoiceTop] = useState<number>(0);
   const [choiceBottom, setChoiceBottom] = useState<number>(0);
   const [choiceOuter, setChoiceOuter] = useState<number>(0);
+
+  const [complete, setComplete] = useState<boolean>(false);
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("task2") as string) || {};
@@ -34,6 +37,12 @@ export default function Page() {
       setOuter(clothes);
     });
   }, []);
+
+  useEffect(() => {
+    if (choiceTop && choiceBottom && choiceOuter) {
+      setComplete(true);
+    }
+  }, [choiceTop, choiceBottom, choiceOuter]);
 
   function choiceTopClothes(id: number) {
     setChoiceTop(id);
@@ -58,7 +67,17 @@ export default function Page() {
 
   return (
     <div>
-      <MoveBackHeader path="/" />
+      <div className="flex justify-between items-center">
+        <MoveBackHeader path="/" />
+        {complete && (
+          <Link
+            className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
+            href="/task2/choice/result"
+          >
+            완료
+          </Link>
+        )}
+      </div>
       <div>
         <div className="mb-[24px]">
           <div className="w-[150px] h-[47.14px] ml-[12px] mt-[24px] mb-[10px] text-[24px] text-center border-black border-[3px] rounded-[30px]">
