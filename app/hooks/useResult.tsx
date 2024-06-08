@@ -12,21 +12,21 @@ export default function useResult(targetTask: string) {
     const data = JSON.parse(choice);
 
     if (data.top) {
-      fetch("http://localhost:3000/top.json").then(async (res) => {
+      fetch(`${window.location.origin}/top.json`).then(async (res) => {
         const clothes = (await res.json()) as { id: number; url: string }[];
         setTop(clothes.find((item) => item.id === data.top));
       });
     }
 
     if (data.bottom) {
-      fetch("http://localhost:3000/bottom.json").then(async (res) => {
+      fetch(`${window.location.origin}/bottom.json`).then(async (res) => {
         const clothes = (await res.json()) as { id: number; url: string }[];
         setBottom(clothes.find((item) => item.id === data.bottom));
       });
     }
 
     if (data.outer) {
-      fetch("http://localhost:3000/outer.json").then(async (res) => {
+      fetch(`${window.location.origin}/outer.json`).then(async (res) => {
         const clothes = (await res.json()) as { id: number; url: string }[];
         setOuter(clothes.find((item) => item.id === data.outer));
       });

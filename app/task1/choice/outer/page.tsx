@@ -9,7 +9,7 @@ export default function Page() {
   const [choice, setChoice] = useState<number>();
 
   useEffect(() => {
-    fetch("http://localhost:3000/outer.json").then(async (res) => {
+    fetch(`${window.location.origin}/outer.json`).then(async (res) => {
       const clothes = await res.json();
       setData(clothes);
     });

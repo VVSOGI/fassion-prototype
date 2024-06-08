@@ -22,17 +22,17 @@ export default function Page() {
     setChoiceBottom(data.bottom || 0);
     setChoiceOuter(data.outer || 0);
 
-    fetch("http://localhost:3000/top.json").then(async (res) => {
+    fetch(`${window.location.origin}/top.json`).then(async (res) => {
       const clothes = (await res.json()) as { id: number; url: string }[];
       setTop(clothes);
     });
 
-    fetch("http://localhost:3000/bottom.json").then(async (res) => {
+    fetch(`${window.location.origin}/bottom.json`).then(async (res) => {
       const clothes = (await res.json()) as { id: number; url: string }[];
       setBottom(clothes);
     });
 
-    fetch("http://localhost:3000/outer.json").then(async (res) => {
+    fetch(`${window.location.origin}/outer.json`).then(async (res) => {
       const clothes = (await res.json()) as { id: number; url: string }[];
       setOuter(clothes);
     });

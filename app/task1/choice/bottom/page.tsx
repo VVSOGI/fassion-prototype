@@ -8,7 +8,7 @@ export default function Page() {
   const [choice, setChoice] = useState<number>();
 
   useEffect(() => {
-    fetch("http://localhost:3000/bottom.json").then(async (res) => {
+    fetch(`${window.location.origin}/bottom.json`).then(async (res) => {
       const clothes = await res.json();
       setData(clothes);
     });

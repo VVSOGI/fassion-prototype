@@ -24,7 +24,7 @@ export default function Page() {
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("task3") as string) || {};
 
-    fetch("http://localhost:3000/top.json").then(async (res) => {
+    fetch(`${window.location.origin}/top.json`).then(async (res) => {
       const clothes = (await res.json()) as { id: number; url: string }[];
       setChoiceTop(
         data.top ? clothes.find((item) => item.id === data.top) : undefined
@@ -32,7 +32,7 @@ export default function Page() {
       setTop(clothes);
     });
 
-    fetch("http://localhost:3000/bottom.json").then(async (res) => {
+    fetch(`${window.location.origin}/bottom.json`).then(async (res) => {
       const clothes = (await res.json()) as { id: number; url: string }[];
       setChoiceBottom(
         data.bottom
@@ -42,7 +42,7 @@ export default function Page() {
       setBottom(clothes);
     });
 
-    fetch("http://localhost:3000/outer.json").then(async (res) => {
+    fetch(`${window.location.origin}/outer.json`).then(async (res) => {
       const clothes = (await res.json()) as { id: number; url: string }[];
       setChoiceOuter(
         data.outer ? clothes.find((item) => item.id === data.outer) : undefined
