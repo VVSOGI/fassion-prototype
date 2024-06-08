@@ -10,7 +10,7 @@ export default function Page() {
   const [outer, setOuter] = useState<{ id: number; url: string }>();
 
   useEffect(() => {
-    const choice = (localStorage.getItem("task2") as string) || "{}";
+    const choice = (localStorage.getItem("task1") as string) || "{}";
     const data = JSON.parse(choice);
 
     if (data.top) {

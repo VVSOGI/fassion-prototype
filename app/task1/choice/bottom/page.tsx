@@ -34,7 +34,7 @@ export default function Page() {
               key={item.id}
               className={`
                 ${choice === item.id ? "border-8 border-red-500" : ""}
-                w-full h-[300px]
+                w-full h-fit
               `}
               onClick={() => {
                 setChoice(item.id);
@@ -44,7 +44,11 @@ export default function Page() {
                 localStorage.setItem("task1", JSON.stringify(data));
               }}
             >
-              <img className="w-full h-full" src={item.url} alt={item.url} />
+              <img
+                className="w-full h-full object-cover"
+                src={item.url}
+                alt={item.url}
+              />
             </div>
           );
         })}
