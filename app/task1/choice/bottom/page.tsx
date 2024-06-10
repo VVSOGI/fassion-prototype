@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { MoveBackHeader } from "@/app/components";
+import { MoveBackHeader } from "@/app/common";
 
 export default function Page() {
   const [data, setData] = useState<{ id: number; url: string }[]>([]);

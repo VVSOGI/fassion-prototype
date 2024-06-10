@@ -1,6 +1,5 @@
 import React from "react";
-import { container } from "@/app/common";
-import { MoveButton } from "@/app/components";
+import { container, MoveButton } from "@/app/common";
 
 export function Mobile() {
   return (

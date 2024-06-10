@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { MoveBackHeader } from "@/app/components";
 import useResult from "@/app/hooks/useResult";
+import { MoveBackHeader } from "@/app/common";
 import Link from "next/link";
 
 export default function Page() {

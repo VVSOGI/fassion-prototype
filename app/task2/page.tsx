@@ -1,5 +1,5 @@
 import React from "react";
-import { MoveButton } from "../components";
+import { MoveButton } from "@/app/common";
 
 export default function page() {
   return (

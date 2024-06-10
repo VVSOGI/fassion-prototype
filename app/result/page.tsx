@@ -1,5 +1,5 @@
-import { MoveBackHeader } from "../components";
 import { TaskButton } from "../home";
+import { MoveBackHeader } from "@/app/common";
 
 export default function Home() {
   return (

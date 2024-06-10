@@ -1,5 +1,5 @@
 import React from "react";
-import { MoveBackHeader, MoveButton } from "@/app/components";
+import { MoveBackHeader, MoveButton } from "@/app/common";
 
 export default function page() {
   return (

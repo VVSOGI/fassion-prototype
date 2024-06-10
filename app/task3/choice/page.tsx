@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { MoveBackHeader } from "@/app/components";
-import Link from "next/link";
+import { MoveBackHeader } from "@/app/common";
 import Category from "./Category";
 import List from "./List";
+import Link from "next/link";
 
 export default function Page() {
   const [category, setCategory] = useState<string>("top");
