@@ -1,5 +1,5 @@
 import React from "react";
-import { container, MoveButtonTablet } from "@/app/common";
+import { container, MoveButtonDesktop } from "@/app/common";
 
 export function Desktop() {
   return (
@@ -11,7 +11,7 @@ export function Desktop() {
         <div className="h-[152px] text-[72px] mb-[80px] text-center leading-[4.5rem]">
           출근할 때 입고 싶은 옷의 조합을 코디해 주세요
         </div>
-        <MoveButtonTablet path="/task1/choice">시작</MoveButtonTablet>
+        <MoveButtonDesktop path="/task1/choice">시작</MoveButtonDesktop>
       </div>
     </div>
   );
