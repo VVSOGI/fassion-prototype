@@ -1,5 +1,5 @@
 import React from "react";
-import { MoveButton } from "@/app/common";
+import { MoveButtonTablet } from "@/app/common";
 
 export default function page() {
   return (
@@ -10,7 +10,7 @@ export default function page() {
       <div className="h-[152px] text-[64px] mb-[227px] text-center leading-[4.5rem]">
         가을에 어울리는 옷을 <br /> 코디해 주세요
       </div>
-      <MoveButton path="/task3/choice">시작</MoveButton>
+      <MoveButtonTablet path="/task3/choice">시작</MoveButtonTablet>
     </div>
   );
 }

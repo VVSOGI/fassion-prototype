@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function MoveButton({ path, children }: Props) {
+export function MoveButtonTablet({ path, children }: Props) {
   return (
     <Link
       className="w-[600px] h-[120px] flex justify-center items-center bg-[#2C2F37] rounded-[50px] text-[64px] text-white mx-auto"
