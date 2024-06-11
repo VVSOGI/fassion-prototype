@@ -1,6 +1,6 @@
 import React from "react";
 import { container } from "@/app/common";
-import { Modal, TaskButton } from ".";
+import { Modal, TaskButtonDesktop } from ".";
 import Link from "next/link";
 
 interface Props {
@@ -29,17 +29,17 @@ export function Desktop({
         />
         <div className="h-full flex justify-center flex-col gap-[120px] py-[223px]">
           <div className="flex flex-col gap-[50px] mx-auto">
-            <TaskButton path="/task1" isComplete={isCompleteTask1}>
+            <TaskButtonDesktop path="/task1" isComplete={isCompleteTask1}>
               Task 1
-            </TaskButton>
-            <TaskButton path="/task2" isComplete={isCompleteTask2}>
+            </TaskButtonDesktop>
+            <TaskButtonDesktop path="/task2" isComplete={isCompleteTask2}>
               Task 2
-            </TaskButton>
-            <TaskButton path="/task3" isComplete={isCompleteTask3}>
+            </TaskButtonDesktop>
+            <TaskButtonDesktop path="/task3" isComplete={isCompleteTask3}>
               Task 3
-            </TaskButton>
+            </TaskButtonDesktop>
             <div
-              className="w-[600px] h-[120px] flex justify-center items-center bg-red-700 text-white text-[64px] rounded-[50px]"
+              className="w-[800px] h-[140px] flex justify-center items-center bg-red-700 text-white text-[84px] rounded-[50px]"
               onClick={() => setModalOpen(true)}
             >
               RESET
@@ -47,7 +47,7 @@ export function Desktop({
           </div>
           <div className="mx-auto">
             <Link
-              className="w-[600px] h-[120px] flex justify-center items-center bg-[#808287] text-white text-[64px] rounded-[50px]"
+              className="w-[800px] h-[140px] flex justify-center items-center bg-[#808287] text-white text-[84px] rounded-[50px]"
               href={"/result"}
             >
               전체 결과 보기

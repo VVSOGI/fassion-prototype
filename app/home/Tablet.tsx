@@ -1,6 +1,6 @@
 import React from "react";
 import { container } from "@/app/common";
-import { Modal, TaskButton } from ".";
+import { Modal, TaskButtonTablet } from ".";
 import Link from "next/link";
 
 interface Props {
@@ -30,15 +30,15 @@ export function Tablet({
         />
         <div className="h-full flex flex-col justify-between py-[223px]">
           <div className="flex flex-col gap-[50px] mx-auto">
-            <TaskButton path="/task1" isComplete={isCompleteTask1}>
+            <TaskButtonTablet path="/task1" isComplete={isCompleteTask1}>
               Task 1
-            </TaskButton>
-            <TaskButton path="/task2" isComplete={isCompleteTask2}>
+            </TaskButtonTablet>
+            <TaskButtonTablet path="/task2" isComplete={isCompleteTask2}>
               Task 2
-            </TaskButton>
-            <TaskButton path="/task3" isComplete={isCompleteTask3}>
+            </TaskButtonTablet>
+            <TaskButtonTablet path="/task3" isComplete={isCompleteTask3}>
               Task 3
-            </TaskButton>
+            </TaskButtonTablet>
             <div
               className={`
               w-[600px] h-[120px] flex justify-center items-center bg-red-700 text-white text-[64px] rounded-[50px]
