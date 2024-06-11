@@ -1,6 +1,7 @@
 export * from "./Modal";
-export * from "./ResultButton";
-export * from "./TaskButton";
+export * from "./components/TaskButtonDesktop";
+export * from "./components/TaskButtonTablet";
+export * from "./components/TaskButtonMobile";
 
 export * from "./Desktop";
 export * from "./Tablet";
