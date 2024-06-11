@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Modal, TaskButton } from "./home";
-import Link from "next/link";
+import { Desktop, Mobile, Tablet } from "./home";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -45,41 +44,31 @@ export default function Home() {
   if (loading) return null;
 
   return (
-    <main className="relative w-full h-screen">
-      <Modal
+    <div>
+      <Desktop
         modalOpen={modalOpen}
+        isCompleteTask1={isCompleteTask1}
+        isCompleteTask2={isCompleteTask2}
+        isCompleteTask3={isCompleteTask3}
         setModalOpen={setModalOpen}
         reset={resetTasks}
       />
-      <div className="h-full flex flex-col justify-between py-[223px]">
-        <div className="flex flex-col gap-[50px] mx-auto">
-          <TaskButton path="/task1" isComplete={isCompleteTask1}>
-            Task 1
-          </TaskButton>
-          <TaskButton path="/task2" isComplete={isCompleteTask2}>
-            Task 2
-          </TaskButton>
-          <TaskButton path="/task3" isComplete={isCompleteTask3}>
-            Task 3
-          </TaskButton>
-          <div
-            className={`
-              w-[600px] h-[120px] flex justify-center items-center bg-red-700 text-white text-[64px] rounded-[50px]
-            `}
-            onClick={() => setModalOpen(true)}
-          >
-            RESET
-          </div>
-        </div>
-        <div className="mx-auto">
-          <Link
-            className="w-[600px] h-[120px] flex justify-center items-center bg-[#808287] text-white text-[64px] rounded-[50px]"
-            href={"/result"}
-          >
-            전체 결과 보기
-          </Link>
-        </div>
-      </div>
-    </main>
+      <Tablet
+        modalOpen={modalOpen}
+        isCompleteTask1={isCompleteTask1}
+        isCompleteTask2={isCompleteTask2}
+        isCompleteTask3={isCompleteTask3}
+        setModalOpen={setModalOpen}
+        reset={resetTasks}
+      />
+      <Mobile
+        modalOpen={modalOpen}
+        isCompleteTask1={isCompleteTask1}
+        isCompleteTask2={isCompleteTask2}
+        isCompleteTask3={isCompleteTask3}
+        setModalOpen={setModalOpen}
+        reset={resetTasks}
+      />
+    </div>
   );
 }
