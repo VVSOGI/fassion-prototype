@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { MoveBackHeader } from "@/app/common";
+import { MoveBackHeaderTablet } from "@/app/common";
 
 export default function Page() {
   const [data, setData] = useState<{ id: number; url: string }[]>([]);
@@ -21,7 +21,7 @@ export default function Page() {
 
   return (
     <div className="h-screen">
-      <MoveBackHeader path="/task1/choice" />
+      <MoveBackHeaderTablet path="/task1/choice" />
       <div className="mt-[79px] ml-[43px] mb-[76px]">
         <div className="w-[280px] h-[88px] flex justify-center items-center bg-[#2C2F37] rounded-[30px] text-[40px] text-white">
           상의

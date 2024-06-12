@@ -1,10 +1,10 @@
 import { TaskButtonTablet } from "../home";
-import { MoveBackHeader } from "@/app/common";
+import { MoveBackHeaderTablet } from "@/app/common";
 
 export default function Home() {
   return (
     <main className="w-full">
-      <MoveBackHeader path="/" />
+      <MoveBackHeaderTablet path="/" />
       <div className="h-full flex flex-col justify-between pt-[223px]">
         <div className="flex flex-col gap-[50px] mx-auto">
           <TaskButtonTablet path="/result/task1" isComplete={false}>

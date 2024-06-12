@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { MoveBackHeader } from "@/app/common";
+import { MoveBackHeaderTablet } from "@/app/common";
 import Slide from "./Slide";
 import Link from "next/link";
 
@@ -68,7 +68,7 @@ export default function Page() {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <MoveBackHeader path="/" />
+        <MoveBackHeaderTablet path="/" />
         {complete && (
           <Link
             className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"

@@ -2,7 +2,7 @@
 
 import React from "react";
 import useResult from "@/app/hooks/useResult";
-import { MoveBackHeader } from "@/app/common";
+import { MoveBackHeaderTablet } from "@/app/common";
 import Link from "next/link";
 
 export default function Page() {
@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <div className="h-screen">
       <div className="flex justify-between items-center">
-        <MoveBackHeader path="/task2/choice" />
+        <MoveBackHeaderTablet path="/task2/choice" />
         <Link
           className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
           href="/task3"

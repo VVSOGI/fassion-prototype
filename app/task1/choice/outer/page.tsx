@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { MoveBackHeader } from "@/app/common";
+import { MoveBackHeaderTablet } from "@/app/common";
 import Link from "next/link";
 
 export default function Page() {
@@ -23,7 +23,7 @@ export default function Page() {
   return (
     <div className="h-screen">
       <div className="flex justify-between items-center">
-        <MoveBackHeader path="/task1/choice" />
+        <MoveBackHeaderTablet path="/task1/choice" />
         <Link
           className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
           href="/task1/choice/result"
