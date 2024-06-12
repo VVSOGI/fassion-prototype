@@ -11,7 +11,9 @@ export function Mobile() {
         <div className="h-[152px] text-[32px] text-center">
           출근할 때 입고 싶은 옷의 조합을 <br /> 코디해 주세요
         </div>
-        <MoveButtonMobile path="/task1/choice">시작</MoveButtonMobile>
+        <div className="px-[24px]">
+          <MoveButtonMobile path="/task1/choice">시작</MoveButtonMobile>
+        </div>
       </div>
     </div>
   );

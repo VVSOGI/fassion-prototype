@@ -29,7 +29,7 @@ export function Mobile({
           reset={reset}
         />
         <div className="h-full flex flex-col justify-center gap-[48px]">
-          <div className="flex flex-col gap-[24px] px-[48px]">
+          <div className="flex flex-col gap-[24px] px-[24px]">
             <TaskButtonMobile path="/task1" isComplete={isCompleteTask1}>
               Task 1
             </TaskButtonMobile>
@@ -48,7 +48,7 @@ export function Mobile({
               RESET
             </div>
           </div>
-          <div className="px-[48px]">
+          <div className="px-[24px]">
             <Link
               className="w-full h-[80px] flex justify-center items-center bg-[#808287] text-white text-[32px] rounded-[50px]"
               href={"/result"}

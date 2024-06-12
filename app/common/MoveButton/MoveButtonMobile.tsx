@@ -9,7 +9,7 @@ interface Props {
 export function MoveButtonMobile({ path, children }: Props) {
   return (
     <Link
-      className="w-[400px] h-[80px] flex justify-center items-center bg-[#2C2F37] rounded-[50px] text-[32px] text-white mx-auto"
+      className="w-full h-[80px] flex justify-center items-center bg-[#2C2F37] rounded-[50px] text-[32px] text-white mx-auto"
       href={path}
     >
       {children}
