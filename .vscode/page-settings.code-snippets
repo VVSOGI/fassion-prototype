@@ -1,0 +1,12 @@
+{
+  "Settings export": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "settings-export",
+    "body": [
+      "export * from './Desktop'",
+      "export * from './Tablet'",
+      "export * from './Mobile'"
+    ],
+    "description": "Settings export desktop, tablet, mobile"
+  }
+}
