@@ -9,8 +9,8 @@ export function Desktop() {
   return (
     <div className={`${container.size.desktop} h-screen`}>
       <MoveBackHeaderDesktop path="/" />
-      <div className="h-[calc(100%-120px)] flex flex-col justify-center gap-[140px]">
-        <div className="flex flex-col gap-[50px]">
+      <div className="h-[calc(100%-120px)] flex flex-col justify-center gap-[70px]">
+        <div className="flex flex-col gap-[20px]">
           <MoveButtonDesktop path="/task1/choice/top">상의</MoveButtonDesktop>
           <MoveButtonDesktop path="/task1/choice/bottom">
             하의

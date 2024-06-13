@@ -13,7 +13,7 @@ export function MoveBackHeaderDesktop({ path }: Props) {
 
   return (
     <div className="pl-[43px] pt-[48px]">
-      <IoIosArrowBack fontSize={72} onClick={() => router.push(path)} />
+      <IoIosArrowBack fontSize={48} onClick={() => router.push(path)} />
     </div>
   );
 }
