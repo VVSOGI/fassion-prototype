@@ -39,7 +39,7 @@ export function Desktop({
               Task 3
             </TaskButtonDesktop>
             <div
-              className="w-[800px] h-[140px] flex justify-center items-center bg-red-700 text-white text-[84px] rounded-[50px]"
+              className="w-[500px] h-[70px] flex justify-center items-center bg-red-700 text-white text-[24px] rounded-[50px]"
               onClick={() => setModalOpen(true)}
             >
               RESET
@@ -47,7 +47,7 @@ export function Desktop({
           </div>
           <div className="mx-auto">
             <Link
-              className="w-[800px] h-[140px] flex justify-center items-center bg-[#808287] text-white text-[84px] rounded-[50px]"
+              className="w-[500px] h-[70px] flex justify-center items-center bg-[#808287] text-white text-[24px] rounded-[50px]"
               href={"/result"}
             >
               전체 결과 보기

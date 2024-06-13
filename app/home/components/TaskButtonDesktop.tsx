@@ -12,7 +12,7 @@ export function TaskButtonDesktop({ children, path, isComplete }: Props) {
     <Link
       className={`
       ${isComplete ? "opacity-[30%]" : ""}
-      w-[800px] h-[140px] flex justify-center items-center bg-[#2C2F37] text-white text-[84px] rounded-[50px]`}
+      w-[500px] h-[70px] flex justify-center items-center mx-auto bg-[#2C2F37] text-white text-[24px] rounded-[50px]`}
       href={path}
     >
       {children}
