@@ -1,6 +1,8 @@
 import React from "react";
-import { MoveBackHeaderTablet, container } from "@/app/common";
+import { container } from "@/app/common";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { IoIosArrowBack } from "react-icons/io";
 
 interface Props {
   data: { id: number; url: string }[];
@@ -9,12 +11,17 @@ interface Props {
 }
 
 export function Tablet({ data, choice, handleClickItem }: Props) {
+  const router = useRouter();
+
   return (
     <div className={container.size.tablet}>
-      <div className="flex justify-between items-center">
-        <MoveBackHeaderTablet path="/task1/choice" />
+      <div className="flex justify-between items-center pt-[48px] px-[43px]">
+        <IoIosArrowBack
+          fontSize={100}
+          onClick={() => router.push("/task1/choice")}
+        />
         <Link
-          className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
+          className="w-fit px-[72px] py-[12px] bg-[#2C2F37] rounded-[30px] text-[32px] text-white"
           href="/task1/choice/result"
         >
           완료

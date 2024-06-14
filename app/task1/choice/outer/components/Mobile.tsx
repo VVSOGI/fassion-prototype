@@ -1,6 +1,8 @@
 import React from "react";
-import { MoveBackHeaderMobile, container } from "@/app/common";
+import { container } from "@/app/common";
 import Link from "next/link";
+import { IoIosArrowBack } from "react-icons/io";
+import { useRouter } from "next/navigation";
 
 interface Props {
   data: { id: number; url: string }[];
@@ -9,12 +11,17 @@ interface Props {
 }
 
 export function Mobile({ data, choice, handleClickItem }: Props) {
+  const router = useRouter();
+
   return (
     <div className={container.size.mobile}>
-      <div className="flex justify-between">
-        <MoveBackHeaderMobile path="/task1/choice" />
+      <div className="flex justify-between items-center pt-[24px] px-[24px]">
+        <IoIosArrowBack
+          fontSize={50}
+          onClick={() => router.push("/task1/choice")}
+        />
         <Link
-          className="w-fit px-[48px] py-[12px] mr-[24px] mt-[24px] bg-[#2C2F37] rounded-[30px] text-[24px] text-white"
+          className="w-fit px-[48px] py-[4px] bg-[#2C2F37] rounded-[30px] text-[24px] text-white"
           href="/task1/choice/result"
         >
           완료
