@@ -1,7 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { IoIosArrowBack } from "react-icons/io";
 
 interface Props {
@@ -12,7 +12,7 @@ export function MoveBackHeaderMobile({ path }: Props) {
   const router = useRouter();
 
   return (
-    <div className="ml-[24px] mt-[24px]">
+    <div className="w-full pt-[24px] px-[24px]">
       <IoIosArrowBack fontSize={50} onClick={() => router.push(path)} />
     </div>
   );
