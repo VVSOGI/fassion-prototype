@@ -1,11 +1,18 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { MoveBackHeaderTablet } from "@/app/common";
+import { Desktop, Tablet, Mobile } from "./components";
 
 export default function Page() {
   const [data, setData] = useState<{ id: number; url: string }[]>([]);
-  const [choice, setChoice] = useState<number>();
+  const [choice, setChoice] = useState<number>(0);
+
+  const handleClickItem = (id: number) => {
+    setChoice(id);
+    const data = JSON.parse(localStorage.getItem("task1") as string) || {};
+    data.top = id;
+    localStorage.setItem("task1", JSON.stringify(data));
+  };
 
   useEffect(() => {
     fetch(`${window.location.origin}/top.json`).then(async (res) => {
@@ -20,39 +27,10 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="h-screen">
-      <MoveBackHeaderTablet path="/task1/choice" />
-      <div className="mt-[79px] ml-[43px] mb-[76px]">
-        <div className="w-[280px] h-[88px] flex justify-center items-center bg-[#2C2F37] rounded-[30px] text-[40px] text-white">
-          상의
-        </div>
-      </div>
-      <div className="grid grid-cols-4 gap-2">
-        {data.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className={`
-                ${choice === item.id ? "border-8 border-red-500" : ""}
-                w-full h-fit
-              `}
-              onClick={() => {
-                setChoice(item.id);
-                const data =
-                  JSON.parse(localStorage.getItem("task1") as string) || {};
-                data.top = item.id;
-                localStorage.setItem("task1", JSON.stringify(data));
-              }}
-            >
-              <img
-                className="w-full h-full object-cover"
-                src={item.url}
-                alt={item.url}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <>
+      <Desktop data={data} choice={choice} handleClickItem={handleClickItem} />
+      <Tablet data={data} choice={choice} handleClickItem={handleClickItem} />
+      <Mobile data={data} choice={choice} handleClickItem={handleClickItem} />
+    </>
   );
 }
