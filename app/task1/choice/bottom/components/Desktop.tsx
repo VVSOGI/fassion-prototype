@@ -23,7 +23,7 @@ export function Desktop({ data, choice, handleClickItem }: Props) {
               key={item.id}
               className={`
                 ${choice === item.id ? "border-8 border-red-500" : ""}
-                w-full h-fit
+                w-full h-full
               `}
               onClick={() => handleClickItem(item.id)}
             >
