@@ -1,17 +1,24 @@
 import React from "react";
-import { MoveBackHeaderDesktop, container } from "@/app/common";
+import { container } from "@/app/common";
 import Link from "next/link";
 import useResult from "@/app/hooks/useResult";
+import { IoIosArrowBack } from "react-icons/io";
+import { useRouter } from "next/navigation";
 
 export function Desktop() {
   const { top, bottom, outer } = useResult("task1");
+  const router = useRouter();
 
   return (
     <div className={container.size.desktop}>
-      <div className="flex justify-between items-center">
-        <MoveBackHeaderDesktop path="/task1/choice" />
+      <div className="flex justify-between items-center pt-[48px] px-[43px]">
+        <IoIosArrowBack
+          className="cursor-pointer"
+          fontSize={48}
+          onClick={() => router.push("/task1/choice")}
+        />
         <Link
-          className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
+          className="w-[186px] h-[58.46px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
           href="/task2"
         >
           Next
