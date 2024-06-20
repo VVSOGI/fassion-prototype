@@ -13,7 +13,11 @@ export function MoveBackHeaderTablet({ path }: Props) {
 
   return (
     <div className="pl-[43px] pt-[48px]">
-      <IoIosArrowBack fontSize={100} onClick={() => router.push(path)} />
+      <IoIosArrowBack
+        className="cursor-pointer"
+        fontSize={100}
+        onClick={() => router.push(path)}
+      />
     </div>
   );
 }

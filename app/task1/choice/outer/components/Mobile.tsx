@@ -17,6 +17,7 @@ export function Mobile({ data, choice, handleClickItem }: Props) {
     <div className={container.size.mobile}>
       <div className="flex justify-between items-center pt-[24px] px-[24px]">
         <IoIosArrowBack
+          className="cursor-pointer"
           fontSize={50}
           onClick={() => router.push("/task1/choice")}
         />

@@ -13,7 +13,11 @@ export function MoveBackHeaderMobile({ path }: Props) {
 
   return (
     <div className="w-full pt-[24px] px-[24px]">
-      <IoIosArrowBack fontSize={50} onClick={() => router.push(path)} />
+      <IoIosArrowBack
+        className="cursor-pointer"
+        fontSize={50}
+        onClick={() => router.push(path)}
+      />
     </div>
   );
 }

@@ -17,6 +17,7 @@ export function Tablet({ data, choice, handleClickItem }: Props) {
     <div className={container.size.tablet}>
       <div className="flex justify-between items-center pt-[48px] px-[43px]">
         <IoIosArrowBack
+          className="cursor-pointer"
           fontSize={100}
           onClick={() => router.push("/task1/choice")}
         />
