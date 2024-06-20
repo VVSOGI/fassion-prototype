@@ -30,7 +30,7 @@ export function Mobile({ data, choice, handleClickItem }: Props) {
       </div>
       <div className="mt-[24px] ml-[24px] mb-[24px]">
         <div className="w-fit px-[24px] py-[4px] bg-[#2C2F37] rounded-[30px] text-[18px] text-white">
-          상의
+          아우터
         </div>
       </div>
       <div className="grid grid-cols-3 gap-1 px-[12px]">
@@ -39,8 +39,8 @@ export function Mobile({ data, choice, handleClickItem }: Props) {
             <div
               key={item.id}
               className={`
-                ${choice === item.id ? "border-8 border-red-500" : ""}
-                w-full h-fit
+                ${choice === item.id ? "border-4 border-red-500" : ""}
+                w-full h-full
               `}
               onClick={() => handleClickItem(item.id)}
             >
