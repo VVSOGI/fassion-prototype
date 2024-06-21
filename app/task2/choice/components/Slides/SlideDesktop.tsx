@@ -15,15 +15,11 @@ interface Props {
   setChoiceItem: (id: number) => void;
 }
 
-export default function Slide({
-  choiceItem,
-  slideItems,
-  setChoiceItem,
-}: Props) {
+export function SlideDesktop({ choiceItem, slideItems, setChoiceItem }: Props) {
   return (
     <div className="w-full h-[307.2px] grid border">
       <Swiper
-        slidesPerView={4}
+        slidesPerView={8}
         grid={{
           rows: 1,
         }}
