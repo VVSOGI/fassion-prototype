@@ -1,7 +1,6 @@
 import React from "react";
-import { container } from "@/app/common";
+import { CompleteHeaderMobile, container } from "@/app/common";
 import { SlideMobile } from ".";
-import { CompleteHeaderMobile } from "@/app/common/CompleteHeader/CompleteHeaderMobile";
 
 interface Props {
   complete: boolean;
