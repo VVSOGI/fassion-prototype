@@ -1,14 +1,12 @@
-"use client";
-
 import React from "react";
-import { Desktop, Mobile, Tablet } from "./components";
+import { ResultDesktop, ResultMobile, ResultTablet } from "@/app/common";
 
 export default function Page() {
   return (
     <div>
-      <Desktop />
-      <Tablet />
-      <Mobile />
+      <ResultDesktop task="task1" backHref="/task1/choice" nextHref="/task2" />
+      <ResultTablet task="task1" backHref="/task1/choice" nextHref="/task2" />
+      <ResultMobile task="task1" backHref="/task1/choice" nextHref="/task2" />
     </div>
   );
 }
