@@ -8,3 +8,6 @@ export * from "./MoveBackHeader/MoveBackHeaderMobile";
 export * from "./MoveButton/MoveButtonDesktop";
 export * from "./MoveButton/MoveButtonTablet";
 export * from "./MoveButton/MoveButtonMobile";
+export * from "./ResultPage/ResultDesktop";
+export * from "./ResultPage/ResultTablet";
+export * from "./ResultPage/ResultMobile";

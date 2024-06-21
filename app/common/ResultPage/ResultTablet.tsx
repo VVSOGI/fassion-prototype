@@ -1,18 +1,26 @@
+"use client";
+
 import React from "react";
 import { MoveBackHeaderTablet, container } from "@/app/common";
 import Link from "next/link";
 import useResult from "@/app/hooks/useResult";
 
-export function Tablet() {
-  const { top, bottom, outer } = useResult("task1");
+interface Props {
+  task: string;
+  backHref: string;
+  nextHref: string;
+}
+
+export function ResultTablet({ task, backHref, nextHref }: Props) {
+  const { top, bottom, outer } = useResult(task);
 
   return (
     <div className={container.size.tablet}>
       <div className="flex justify-between items-center">
-        <MoveBackHeaderTablet path="/task1/choice" />
+        <MoveBackHeaderTablet path={backHref} />
         <Link
           className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
-          href="/task2"
+          href={nextHref}
         >
           Next
         </Link>

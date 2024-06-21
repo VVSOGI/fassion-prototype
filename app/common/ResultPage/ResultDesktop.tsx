@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { container } from "@/app/common";
 import Link from "next/link";
@@ -5,8 +7,14 @@ import useResult from "@/app/hooks/useResult";
 import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
 
-export function Desktop() {
-  const { top, bottom, outer } = useResult("task1");
+interface Props {
+  task: string;
+  backHref: string;
+  nextHref: string;
+}
+
+export function ResultDesktop({ task, backHref, nextHref }: Props) {
+  const { top, bottom, outer } = useResult(task);
   const router = useRouter();
 
   return (
@@ -15,11 +23,11 @@ export function Desktop() {
         <IoIosArrowBack
           className="cursor-pointer"
           fontSize={48}
-          onClick={() => router.push("/task1/choice")}
+          onClick={() => router.push(backHref)}
         />
         <Link
           className="w-[186px] h-[58.46px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
-          href="/task2"
+          href={nextHref}
         >
           Next
         </Link>
