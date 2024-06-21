@@ -1,8 +1,5 @@
 import React from "react";
-import { container } from "@/app/common";
-import Link from "next/link";
-import { IoIosArrowBack } from "react-icons/io";
-import { useRouter } from "next/navigation";
+import { CompleteHeaderMobile, container } from "@/app/common";
 
 interface Props {
   data: { id: number; url: string }[];
@@ -11,23 +8,13 @@ interface Props {
 }
 
 export function Mobile({ data, choice, handleClickItem }: Props) {
-  const router = useRouter();
-
   return (
     <div className={container.size.mobile}>
-      <div className="flex justify-between items-center pt-[24px] px-[24px]">
-        <IoIosArrowBack
-          className="cursor-pointer"
-          fontSize={50}
-          onClick={() => router.push("/task1/choice")}
-        />
-        <Link
-          className="w-fit px-[24px] py-[4px] bg-[#2C2F37] rounded-[30px] text-[18px] text-white"
-          href="/task1/choice/result"
-        >
-          완료
-        </Link>
-      </div>
+      <CompleteHeaderMobile
+        complete={true}
+        backHref="/task1/choice"
+        completeHref="/task1/choice/result"
+      />
       <div className="mt-[24px] ml-[24px] mb-[24px]">
         <div className="w-fit px-[24px] py-[4px] bg-[#2C2F37] rounded-[30px] text-[18px] text-white">
           아우터
