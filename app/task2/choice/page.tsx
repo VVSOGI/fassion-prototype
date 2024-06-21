@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { MoveBackHeaderTablet } from "@/app/common";
-import Slide from "./Slide";
-import Link from "next/link";
+import { Desktop, Mobile, Tablet } from "./components";
 
 export default function Page() {
   const [top, setTop] = useState<{ id: number; url: string }[]>();
@@ -67,53 +65,23 @@ export default function Page() {
 
   return (
     <div>
-      <div className="flex justify-between items-center">
-        <MoveBackHeaderTablet path="/" />
-        {complete && (
-          <Link
-            className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
-            href="/task2/choice/result"
-          >
-            완료
-          </Link>
-        )}
-      </div>
-      <div>
-        <div className="mb-[24px]">
-          <div className="w-[150px] h-[47.14px] ml-[12px] mt-[24px] mb-[10px] text-[24px] text-center border-black border-[3px] rounded-[30px]">
-            상의
-          </div>
-          <Slide
-            choiceItem={choiceTop}
-            slideItems={top}
-            setChoiceItem={choiceTopClothes}
+      {[Desktop, Tablet, Mobile].map((Component, index) => {
+        return (
+          <Component
+            key={index}
+            complete={complete}
+            top={top}
+            bottom={bottom}
+            outer={outer}
+            choiceTop={choiceTop}
+            choiceBottom={choiceBottom}
+            choiceOuter={choiceOuter}
+            choiceTopClothes={choiceTopClothes}
+            choiceBottomClothes={choiceBottomClothes}
+            choiceOuterClothes={choiceOuterClothes}
           />
-        </div>
-      </div>
-      <div>
-        <div className="mb-[24px]">
-          <div className="w-[150px] h-[47.14px] ml-[12px] mb-[10px] text-[24px] text-center border-black border-[3px] rounded-[30px]">
-            하의
-          </div>
-          <Slide
-            choiceItem={choiceBottom}
-            slideItems={bottom}
-            setChoiceItem={choiceBottomClothes}
-          />
-        </div>
-      </div>
-      <div>
-        <div className="mb-[24px]">
-          <div className="w-[150px] h-[47.14px] ml-[12px] mb-[10px] text-[24px] text-center border-black border-[3px] rounded-[30px]">
-            아우터
-          </div>
-          <Slide
-            choiceItem={choiceOuter}
-            slideItems={outer}
-            setChoiceItem={choiceOuterClothes}
-          />
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 }
