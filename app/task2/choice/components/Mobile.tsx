@@ -1,7 +1,7 @@
 import React from "react";
-import { MoveBackHeaderMobile, container } from "@/app/common";
+import { container } from "@/app/common";
 import { SlideMobile } from ".";
-import Link from "next/link";
+import { CompleteHeaderMobile } from "@/app/common/CompleteHeader/CompleteHeaderMobile";
 
 interface Props {
   complete: boolean;
@@ -30,17 +30,11 @@ export function Mobile({
 }: Props) {
   return (
     <div className={container.size.mobile}>
-      <div className="flex justify-between items-center">
-        <MoveBackHeaderMobile path="/" />
-        {complete && (
-          <Link
-            className="w-fit px-[24px] text-[24px] text-center rounded-[30px] bg-[#2C2F37] text-white"
-            href="/task2/choice/result"
-          >
-            완료
-          </Link>
-        )}
-      </div>
+      <CompleteHeaderMobile
+        backHref="/"
+        complete={complete}
+        completeHref="/task2/choice/result"
+      />
       <div>
         <div className="mb-[24px]">
           <div className="w-[150px] h-[47.14px] ml-[12px] mt-[24px] mb-[10px] text-[24px] text-center border-black border-[3px] rounded-[30px]">
