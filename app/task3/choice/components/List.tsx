@@ -8,7 +8,7 @@ interface Props {
   onClick: (id: number) => void;
 }
 
-export default function List({
+export function List({
   currentCategory,
   targetCategory,
   list,

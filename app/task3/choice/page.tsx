@@ -1,17 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { MoveBackHeaderTablet } from "@/app/common";
-import Category from "./Category";
-import List from "./List";
-import Link from "next/link";
+import { Desktop, Mobile, Tablet } from "./components";
 
 export default function Page() {
   const [category, setCategory] = useState<string>("top");
 
-  const [top, setTop] = useState<{ id: number; url: string }[]>();
-  const [bottom, setBottom] = useState<{ id: number; url: string }[]>();
-  const [outer, setOuter] = useState<{ id: number; url: string }[]>();
+  const [top, setTop] = useState<{ id: number; url: string }[]>([]);
+  const [bottom, setBottom] = useState<{ id: number; url: string }[]>([]);
+  const [outer, setOuter] = useState<{ id: number; url: string }[]>([]);
 
   const [choiceTop, setChoiceTop] = useState<{ id: number; url: string }>();
   const [choiceBottom, setChoiceBottom] = useState<{
@@ -83,77 +80,48 @@ export default function Page() {
 
   return (
     <div>
-      <div className="flex justify-between items-center">
-        <MoveBackHeaderTablet path="/" />
-        {complete && (
-          <Link
-            className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
-            href="/task3/choice/result"
-          >
-            완료
-          </Link>
-        )}
-      </div>
-      <div className="flex gap-[25px] ml-[12px] mt-[24px]">
-        <Category
-          currentCategory={category}
-          targetCategory="top"
-          setCategory={setCategory}
-        >
-          상의
-        </Category>
-        <Category
-          currentCategory={category}
-          targetCategory="bottom"
-          setCategory={setCategory}
-        >
-          하의
-        </Category>
-        <Category
-          currentCategory={category}
-          targetCategory="outer"
-          setCategory={setCategory}
-        >
-          아우터
-        </Category>
-      </div>
-      <div className="w-full h-[600px] px-[12px] mt-[14.86px] grid grid-cols-4 overflow-scroll">
-        <List
-          currentCategory={category}
-          targetCategory="top"
-          list={top}
-          choice={choiceTop}
-          onClick={choiceTopClothes}
-        />
-        <List
-          currentCategory={category}
-          targetCategory="bottom"
-          list={bottom}
-          choice={choiceBottom}
-          onClick={choiceBottomClothes}
-        />
-        <List
-          currentCategory={category}
-          targetCategory="outer"
-          list={outer}
-          choice={choiceOuter}
-          onClick={choiceOuterClothes}
-        />
-      </div>
-      <div className="flex justify-center gap-[24px] mt-[91px]">
-        <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
-          src={choiceTop?.url}
-        />
-        <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
-          src={choiceBottom?.url}
-        />
-        <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
-          src={choiceOuter?.url}
-        />
-      </div>
+      <Desktop
+        complete={complete}
+        top={top}
+        bottom={bottom}
+        outer={outer}
+        category={category}
+        choiceTop={choiceTop}
+        choiceBottom={choiceBottom}
+        choiceOuter={choiceOuter}
+        setCategory={setCategory}
+        choiceTopClothes={choiceTopClothes}
+        choiceBottomClothes={choiceBottomClothes}
+        choiceOuterClothes={choiceOuterClothes}
+      />
+      <Tablet
+        complete={complete}
+        top={top}
+        bottom={bottom}
+        outer={outer}
+        category={category}
+        choiceTop={choiceTop}
+        choiceBottom={choiceBottom}
+        choiceOuter={choiceOuter}
+        setCategory={setCategory}
+        choiceTopClothes={choiceTopClothes}
+        choiceBottomClothes={choiceBottomClothes}
+        choiceOuterClothes={choiceOuterClothes}
+      />
+      <Mobile
+        complete={complete}
+        top={top}
+        bottom={bottom}
+        outer={outer}
+        category={category}
+        choiceTop={choiceTop}
+        choiceBottom={choiceBottom}
+        choiceOuter={choiceOuter}
+        setCategory={setCategory}
+        choiceTopClothes={choiceTopClothes}
+        choiceBottomClothes={choiceBottomClothes}
+        choiceOuterClothes={choiceOuterClothes}
+      />
     </div>
   );
 }

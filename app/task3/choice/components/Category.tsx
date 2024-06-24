@@ -7,7 +7,7 @@ interface Props {
   setCategory: (category: string) => void;
 }
 
-export default function Category({
+export function Category({
   children,
   currentCategory,
   targetCategory,
