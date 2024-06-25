@@ -3,3 +3,7 @@ export * from "./Tablet";
 export * from "./Mobile";
 export * from "./Category";
 export * from "./List";
+
+export * from "./Categories/CategoryDesktop";
+export * from "./Categories/CategoryTablet";
+export * from "./Categories/CategoryMobile";
