@@ -68,7 +68,7 @@ export function Mobile({
           아우터
         </Category>
       </div>
-      <div className="w-full h-[600px] px-[12px] mt-[14.86px] grid grid-cols-4 overflow-scroll">
+      <div className="w-full h-[600px] px-[12px] mt-[14.86px] grid grid-cols-2 overflow-scroll">
         <List
           currentCategory={category}
           targetCategory="top"

@@ -1,6 +1,6 @@
 import React from "react";
 import { MoveBackHeaderDesktop, container } from "@/app/common";
-import { Category, List } from ".";
+import { CategoryTablet, List } from ".";
 import Link from "next/link";
 
 interface Props {
@@ -45,30 +45,30 @@ export function Tablet({
           </Link>
         )}
       </div>
-      <div className="flex gap-[25px] ml-[12px] mt-[24px]">
-        <Category
+      <div className="flex gap-[25px] ml-[12px] mt-[24px] ">
+        <CategoryTablet
           currentCategory={category}
           targetCategory="top"
           setCategory={setCategory}
         >
           상의
-        </Category>
-        <Category
+        </CategoryTablet>
+        <CategoryTablet
           currentCategory={category}
           targetCategory="bottom"
           setCategory={setCategory}
         >
           하의
-        </Category>
-        <Category
+        </CategoryTablet>
+        <CategoryTablet
           currentCategory={category}
           targetCategory="outer"
           setCategory={setCategory}
         >
           아우터
-        </Category>
+        </CategoryTablet>
       </div>
-      <div className="w-full h-[600px] px-[12px] mt-[14.86px] grid grid-cols-4 overflow-scroll">
+      <div className="w-full h-[600px] px-[12px] mt-[14.86px] grid grid-cols-4 overflow-scroll scrollbar-hide">
         <List
           currentCategory={category}
           targetCategory="top"

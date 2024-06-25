@@ -1,7 +1,6 @@
 import React from "react";
-import { MoveBackHeaderDesktop, container } from "@/app/common";
-import { Category, List } from ".";
-import Link from "next/link";
+import { CompleteHeaderDesktop, container } from "@/app/common";
+import { CategoryDesktop, List } from ".";
 
 interface Props {
   complete: boolean;
@@ -34,41 +33,35 @@ export function Desktop({
 }: Props) {
   return (
     <div className={container.size.desktop}>
-      <div className="flex justify-between items-center">
-        <MoveBackHeaderDesktop path="/" />
-        {complete && (
-          <Link
-            className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
-            href="/task3/choice/result"
-          >
-            완료
-          </Link>
-        )}
-      </div>
-      <div className="flex gap-[25px] ml-[12px] mt-[24px]">
-        <Category
+      <CompleteHeaderDesktop
+        complete={complete}
+        backHref="/"
+        completeHref="/task3/choice/result"
+      />
+      <div className="flex gap-[25px] ml-[48px] mt-[24px]">
+        <CategoryDesktop
           currentCategory={category}
           targetCategory="top"
           setCategory={setCategory}
         >
           상의
-        </Category>
-        <Category
+        </CategoryDesktop>
+        <CategoryDesktop
           currentCategory={category}
           targetCategory="bottom"
           setCategory={setCategory}
         >
           하의
-        </Category>
-        <Category
+        </CategoryDesktop>
+        <CategoryDesktop
           currentCategory={category}
           targetCategory="outer"
           setCategory={setCategory}
         >
           아우터
-        </Category>
+        </CategoryDesktop>
       </div>
-      <div className="w-full h-[600px] px-[12px] mt-[14.86px] grid grid-cols-4 overflow-scroll">
+      <div className="w-full h-[600px] mt-[14.86px] grid grid-cols-8 gap-2 overflow-scroll scrollbar-hide">
         <List
           currentCategory={category}
           targetCategory="top"
@@ -91,17 +84,17 @@ export function Desktop({
           onClick={choiceOuterClothes}
         />
       </div>
-      <div className="flex justify-center gap-[24px] mt-[91px]">
+      <div className="h-[500px] flex justify-center gap-[24px] mt-[91px]">
         <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
+          className="w-[250px] h-[350px] object-cover border"
           src={choiceTop?.url}
         />
         <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
+          className="w-[250px] h-[350px] object-cover border"
           src={choiceBottom?.url}
         />
         <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
+          className="w-[250px] h-[350px] object-cover border"
           src={choiceOuter?.url}
         />
       </div>
