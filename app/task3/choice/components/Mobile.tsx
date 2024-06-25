@@ -1,7 +1,6 @@
 import React from "react";
-import { MoveBackHeaderDesktop, container } from "@/app/common";
-import { Category, List } from ".";
-import Link from "next/link";
+import { CompleteHeaderMobile, container } from "@/app/common";
+import { CategoryMobile, List } from ".";
 
 interface Props {
   complete: boolean;
@@ -34,41 +33,35 @@ export function Mobile({
 }: Props) {
   return (
     <div className={container.size.mobile}>
-      <div className="flex justify-between items-center">
-        <MoveBackHeaderDesktop path="/" />
-        {complete && (
-          <Link
-            className="w-[186px] h-[58.46px] mt-[48px] mr-[44px] text-[40px] text-center rounded-[30px] bg-[#2C2F37] text-white"
-            href="/task3/choice/result"
-          >
-            완료
-          </Link>
-        )}
-      </div>
-      <div className="flex gap-[25px] ml-[12px] mt-[24px]">
-        <Category
+      <CompleteHeaderMobile
+        complete={complete}
+        backHref="/"
+        completeHref="/task3/choice/result"
+      />
+      <div className="flex gap-[25px] ml-[24px] my-[24px]">
+        <CategoryMobile
           currentCategory={category}
           targetCategory="top"
           setCategory={setCategory}
         >
           상의
-        </Category>
-        <Category
+        </CategoryMobile>
+        <CategoryMobile
           currentCategory={category}
           targetCategory="bottom"
           setCategory={setCategory}
         >
           하의
-        </Category>
-        <Category
+        </CategoryMobile>
+        <CategoryMobile
           currentCategory={category}
           targetCategory="outer"
           setCategory={setCategory}
         >
           아우터
-        </Category>
+        </CategoryMobile>
       </div>
-      <div className="w-full h-[600px] px-[12px] mt-[14.86px] grid grid-cols-2 overflow-scroll">
+      <div className="w-full h-[600px] px-[12px] mt-[14.86px] grid grid-cols-2 gap-[4px] overflow-scroll scrollbar-hide">
         <List
           currentCategory={category}
           targetCategory="top"
@@ -91,17 +84,17 @@ export function Mobile({
           onClick={choiceOuterClothes}
         />
       </div>
-      <div className="flex justify-center gap-[24px] mt-[91px]">
+      <div className="h-full flex flex-col justify-center items-center gap-[24px] my-[91px]">
         <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
+          className="w-full h-full object-cover border"
           src={choiceTop?.url}
         />
         <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
+          className="w-full h-full object-cover border"
           src={choiceBottom?.url}
         />
         <img
-          className="w-[250px] h-[350px] object-cover border-black border-2"
+          className="w-full h-full object-cover border"
           src={choiceOuter?.url}
         />
       </div>

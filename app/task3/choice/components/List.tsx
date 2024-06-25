@@ -23,7 +23,7 @@ export function List({
           key={item.id}
           className={`
           ${choice?.id === item.id ? "border-8 border-red-500" : ""}
-          w-full h-[300px]
+          w-full h-full
         `}
           onClick={() => onClick(item.id)}
         >
