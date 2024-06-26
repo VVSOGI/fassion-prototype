@@ -41,8 +41,8 @@ export function Mobile({
             </TaskButtonMobile>
             <div
               className={`
-          w-full h-[80px] flex justify-center items-center bg-red-700 text-white text-[32px] rounded-[50px]
-        `}
+                w-full flex justify-center items-center py-[4px] bg-red-700 text-white text-[24px] rounded-[50px]
+              `}
               onClick={() => setModalOpen(true)}
             >
               RESET
@@ -50,7 +50,7 @@ export function Mobile({
           </div>
           <div className="px-[24px]">
             <Link
-              className="w-full h-[80px] flex justify-center items-center bg-[#808287] text-white text-[32px] rounded-[50px]"
+              className="w-full flex justify-center items-center py-[4px] bg-[#808287] text-white text-[28px] rounded-[50px]"
               href={"/result"}
             >
               전체 결과 보기
