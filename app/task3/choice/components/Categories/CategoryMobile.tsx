@@ -19,9 +19,9 @@ export function CategoryMobile({
             ${
               currentCategory === targetCategory
                 ? "bg-[#2C2F37] text-white"
-                : "bg-white border-black border-[3px]"
+                : "bg-white border-[#2C2F37] border-[3px]"
             }
-            w-[120px] py-[2px] flex justify-center items-center rounded-[30px] text-[18px] cursor-pointer
+            w-fit px-[24px] py-[2px] flex justify-center items-center rounded-[30px] text-[14px] cursor-pointer
         `}
       onClick={() => setCategory(targetCategory)}
     >

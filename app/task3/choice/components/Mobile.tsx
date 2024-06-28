@@ -38,7 +38,7 @@ export function Mobile({
         backHref="/"
         completeHref="/task3/choice/result"
       />
-      <div className="flex gap-[25px] ml-[24px] my-[24px]">
+      <div className="flex gap-[12px] ml-[12px] my-[24px]">
         <CategoryMobile
           currentCategory={category}
           targetCategory="top"
