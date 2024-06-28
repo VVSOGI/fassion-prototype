@@ -19,7 +19,7 @@ export function SlideMobile({ choiceItem, slideItems, setChoiceItem }: Props) {
   return (
     <div className="w-full h-[307.2px] grid border">
       <Swiper
-        slidesPerView={3}
+        slidesPerView={2}
         grid={{
           rows: 1,
         }}
@@ -39,7 +39,11 @@ export function SlideMobile({ choiceItem, slideItems, setChoiceItem }: Props) {
                 ${choiceItem === item.id ? "border-8 border-red-500" : ""}
             `}
             >
-              <img className="w-full h-full" src={item.url} alt={item.url} />
+              <img
+                className="w-full h-full object-cover"
+                src={item.url}
+                alt={item.url}
+              />
             </SwiperSlide>
           );
         })}

@@ -36,7 +36,7 @@ export function Mobile({
       />
       <div>
         <div className="mb-[24px]">
-          <div className="w-[150px] h-[47.14px] ml-[12px] mt-[24px] mb-[10px] text-[24px] text-center border-black border-[3px] rounded-[30px]">
+          <div className="w-fit px-[24px] ml-[12px] mt-[24px] mb-[10px] text-[18px] text-center border-black border-2 rounded-[30px]">
             상의
           </div>
           <SlideMobile
@@ -48,7 +48,7 @@ export function Mobile({
       </div>
       <div>
         <div className="mb-[24px]">
-          <div className="w-[150px] h-[47.14px] ml-[12px] mb-[10px] text-[24px] text-center border-black border-[3px] rounded-[30px]">
+          <div className="w-fit px-[24px] ml-[12px] mb-[10px] text-[18px] text-center border-black border-2 rounded-[30px]">
             하의
           </div>
           <SlideMobile
@@ -60,7 +60,7 @@ export function Mobile({
       </div>
       <div>
         <div className="mb-[24px]">
-          <div className="w-[150px] h-[47.14px] ml-[12px] mb-[10px] text-[24px] text-center border-black border-[3px] rounded-[30px]">
+          <div className="w-fit px-[24px] ml-[12px] mb-[10px] text-[18px] text-center border-black border-2 rounded-[30px]">
             아우터
           </div>
           <SlideMobile
